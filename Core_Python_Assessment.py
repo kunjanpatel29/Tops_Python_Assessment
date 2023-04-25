@@ -1,6 +1,6 @@
 # Write a program to demonstrate the bank management Console based application.
 
-import datetime
+from datetime import datetime
 
 print("WELCOME TO PYTHON BANK MANAGEMENT SYSTEM"+"\n")
 
@@ -8,7 +8,6 @@ print("Select your role")
 print("\t1) Banker")
 print("\t2) Customer")
 print("\t3) Exit")
-
 
 while True:
     
@@ -43,24 +42,29 @@ while True:
             acno = int(input("Enter Account Number : "))
             cname = input("Enter Customer Name : ")
             balance = int(input("Enter Opening Balance : "))
-            time = datetime.datetime.now()
+            now = datetime.now()
             
         elif choice == 2:
             d={}
             d[acno] = {}
             d[acno]["name"] = cname 
-            d[acno]["balacne"]= balance
-            d[acno]["Opening Date"] = time
+            d[acno]["balance"]= balance
+            d[acno]["Opening Date"] = now
             print(d)
         
         elif choice == 3:
-            print("Search Customer")
+            acno = int(input("Enter Account Number : "))
+            if acno in d:
+                print("Exists")
+            else:
+                print("Not Exists")
 
         elif choice == 4:
             print(d)
             
         elif choice == 5:
-            print("Total Amounts in Bank")
+            d[acno]["balance"] += balance
+            print(d)
         else:
             print("Exit")
             break
