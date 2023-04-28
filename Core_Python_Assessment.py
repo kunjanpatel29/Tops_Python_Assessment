@@ -55,16 +55,15 @@ while True:
         elif choice == 3:
             acno = int(input("Enter Account Number : "))
             if acno in d:
-                print("Exists")
+                print(acno," Is Exists")
             else:
-                print("Not Exists")
+                print(acno," Is Not Exists")
 
         elif choice == 4:
             print(d)
             
         elif choice == 5:
-            d[acno]["balance"] += balance
-            print("Total Amounts in bank is : ",d[acno]["balance"])
+            pass
         else:
             print("Exit")
             break
