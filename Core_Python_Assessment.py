@@ -42,14 +42,14 @@ while True:
             acno = int(input("Enter Account Number : "))
             cname = input("Enter Customer Name : ")
             balance = int(input("Enter Opening Balance : "))
-            now = datetime.now()
+            date = datetime.now()
             
         elif choice == 2:
             d={}
             d[acno] = {}
             d[acno]["name"] = cname 
             d[acno]["balance"]= balance
-            d[acno]["Opening Date"] = now
+            d[acno]["Opening Date"] = date
             print(d)
         
         elif choice == 3:
@@ -60,10 +60,11 @@ while True:
                 print(acno," Is Not Exists")
 
         elif choice == 4:
-            print(d)
+            print("Customer is : ",d)
             
         elif choice == 5:
             pass
+
         else:
             print("Exit")
             break
