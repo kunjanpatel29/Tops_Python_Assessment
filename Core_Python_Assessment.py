@@ -63,7 +63,8 @@ while True:
             print("Customer is : ",d)
             
         elif choice == 5:
-            pass
+            d[acno]["balance"] += balance
+            print("Total Amounts in bank is : ",d[acno]["balance"])
 
         else:
             print("Exit")
