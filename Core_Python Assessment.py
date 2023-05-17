@@ -74,19 +74,19 @@ while True:
     if answer !='y':
         break
 
-        while True:
-            choice = int(input("Enter Operation Which You Want to Perform : "))
+    while True:
+        choice = int(input("Enter Operation Which You Want to Perform : "))
 
-            if choice == 1:
-                print("Withdraw Amount")
+        if choice == 1:
+            print("Withdraw Amount")
 
-            elif choice == 2:
-                print("Deposit Amount")
+        elif choice == 2:
+            print("Deposit Amount")
 
-            elif choice == 3:
-                print("View Balance")
+        elif choice == 3:
+            print("View Balance")
 
-            else:
-                print("Exit")
-                break    
+        else:
+            print("Exit")
+            break    
                                 
