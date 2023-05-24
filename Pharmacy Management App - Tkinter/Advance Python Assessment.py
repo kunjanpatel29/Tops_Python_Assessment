@@ -68,7 +68,6 @@ class Window1:
                                   state=DISABLED,command=self.Hospital_window,font=('arial',20,'bold'))
         self.btnHospital.grid(row = 0, column = 1)
         #===============================================================================
-
     def Login_System(self):
         user = (self.Username.get())
         pas= (self.Password.get())
@@ -108,3 +107,92 @@ class Window1:
         self.newWindow = Toplevel(self.master)
         self.app = Window3(self.newWindow)
         
+class Window2:
+    def __init__(self,master):
+        self.master = master
+        self.master.title("Patients Registration System")
+        self.master.geometry('1350x750+0+0')
+        self.frame = Frame(self.master)
+        self.frame.pack()
+        #==============================================================================
+
+        DateofOrder = StringVar()
+        DateofOrder.set(time.strftime("%d/%m/%y"))
+
+        var1=StringVar()
+        var2=StringVar()
+        var3=StringVar()
+        var4=IntVar()
+
+        Firstname=StringVar()
+        Surname=StringVar()
+        Address=StringVar()
+        PostCode=StringVar()
+        Telephone=StringVar()
+        Ref=StringVar()
+
+        Membership = StringVar()
+        Membership.set("0")
+
+        # Functions Declared
+
+        def iExit():
+            iExit = tkinter.messagebox.askyesno("Patients Registration System", "Cofirm if you want to exit")
+            if iExit > 0:
+                self.master.destroy()
+                return
+
+        def Reset():
+            Firstname.set("")
+            Surname.set("")
+            Address.set("")
+            PostCode.set("")
+            Telephone.set("")
+            Ref.set("")
+            Membership.set("")
+
+            var1.set("")
+            var2.set("")
+            var3.set("")
+            var4.set("0")
+
+            self.cboProve_of_ID.current(0)
+            self.cboType_of_Member.current(0)
+            self.cboMethod_of_Payment.current(0)
+            self.txtMembership.config(state=DISABLED)
+
+
+        def iResetRecord():
+            iResetRecord = tkinter.messagebox.askokcancel("Patients Registration System", "Confirm if You Want to add a New Record")
+
+            if iResetRecord > 0:
+                Reset()
+            elif iResetRecord <= 0:
+                Reset()
+                self.txtReceipt.delete("1.0",END)
+                return
+
+        def Ref_No():
+
+            x=random.randint(10903,600873)
+            randomRef = str(x)
+            Ref.set(randomRef)
+
+        def Receipt():
+            Ref_No()
+            self.txtReceipt.insert(END,"\t" + Ref.get()+ "\t\t" + Firstname.get() + "\t\t"
+                                + Surname.get()+ "\t\t" + Address.get()+ "\t\t" + DateofOrder.get()+ "\t\t"
+                                + Telephone.get()+ "\t\t" + Membership.get()+ "\n")
+
+        def Membership_Fees():
+
+            if(var4.get() == 1):
+                self.txtMembership.configure(state=NORMAL)
+                Item1 = float(50)
+                Membership.set("" + str(Item1))
+
+            elif(var4.get() == 0):
+                self.txtMembership.configure(state=DISABLED)
+                Membership.set("0")
+                
+       
