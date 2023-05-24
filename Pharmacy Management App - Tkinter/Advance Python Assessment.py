@@ -387,4 +387,80 @@ class Window3:
             DailyDose.get() + "\t\t"+StorageAdvice.get()+ "\t"+ NHSNumber.get()+ "\t\t"+PatientName.get()
             +"\t"+DateofBirth.get()+"\t"+PatientAddress.get()+ "\n")
             return
+
+        def iDelete():
+
+            cmbNameTablets.set("")
+            self.cboNameTablet.current(0)
+            Ref.set("")
+            Dose.set("")
+            NumberofTablets.set("")
+            Lot.set("")
+            IssuedDate.set("")
+            ExpDate.set("")
+            DailyDose.set("")
+            PossibleSideEffects.set("")
+            FurtherInformation.set("")
+            StorageAdvice.set("")
+            DrivingUsingMachines.set("")
+            HowtoUseMedication.set("")
+            PatientID.set("")
+            NHSNumber.set("")
+            PatientName.set("")
+            DateofBirth.set("")
+            PatientAddress.set("")
+            self.txtPrescription.delete("1.0",END)
+            self.txtFrameDetail.delete("1.0",END)
+            return
+
+        def iReset():
+            
+            cmbNameTablets.set("")
+            self.cboNameTablet.current(0)
+            Ref.set("")
+            Dose.set("")
+            NumberofTablets.set("")
+            Lot.set("")
+            IssuedDate.set("")
+            ExpDate.set("")
+            DailyDose.set("")
+            PossibleSideEffects.set("")
+            FurtherInformation.set("")
+            StorageAdvice.set("")
+            DrivingUsingMachines.set("")
+            HowtoUseMedication.set("")
+            PatientID.set("")
+            NHSNumber.set("")
+            PatientName.set("")
+            DateofBirth.set("")
+            PatientAddress.set("")
+            self.txtPrescription.delete("1.0",END)
+            return
+
+        # ======================================= Frame =================================       
+        MainFrame=Frame(self.frame)
+        MainFrame.grid()
+
+        TitleFrame=Frame(MainFrame,bd=20, width=1200, padx=35,relief=RIDGE)
+        TitleFrame.pack(side=TOP)
+
+        self.lblTitle=Label(TitleFrame,font=('arial',40,'bold'),text="Hosptal Management System",padx=4)
+        self.lblTitle.grid()
+
+        FrameDetail=Frame(MainFrame,bd=20,width=1350,height=100,padx=20,relief=RIDGE)
+        FrameDetail.pack(side=BOTTOM)
+
+        ButtonFrame=Frame(MainFrame,bd=20,width=1350,height=50,padx=20,relief=RIDGE)
+        ButtonFrame.pack(side=BOTTOM)
+
+        DataFrame=Frame(MainFrame,bd=20,width=1350,height=400,padx=20,relief=RIDGE)
+        DataFrame.pack(side=BOTTOM)
+
+        DataFrameLEFT=LabelFrame(DataFrame,bd=10,width=800,height=300,padx=20,relief=RIDGE,
+                                 font=('arial',12,'bold'),text="Patient Information",)
+        DataFrameLEFT.pack(side=LEFT)
+
+        DataFrameRIGHT=LabelFrame(DataFrame,bd=10,width=800,height=300,padx=20,relief=RIDGE,
+                                 font=('arial',12,'bold'),text="Prescription",)
+        DataFrameRIGHT.pack(side=RIGHT)
        
