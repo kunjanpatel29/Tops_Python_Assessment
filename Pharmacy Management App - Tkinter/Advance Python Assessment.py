@@ -586,4 +586,16 @@ class Window3:
         self.btnExit=Button(ButtonFrame,text='Exit',font=('arial',12,'bold'),width=24,bd=4,
                             command=iExit)
         self.btnExit.grid(row=0,column=4)
+
+        #==================================FrameDetail=====================================
+        self.lblLabel = Label(FrameDetail,font=('arial',10,'bold'),pady=8,
+                text="Name of Tablets\tReference No.\t Doseage\t No. of Tablets\t Lot\t Issued Date\t Exp. Date\t Daily Dose\t Storage Adv.\t NHS Number\t Patient Name\t DOB\t Address",)
+        self.lblLabel.grid(row=0,column=0)
+
+        self.txtFrameDetail=Text(FrameDetail,font=('arial',12,'bold'),width=141,height=4,padx=2,pady=4)
+        self.txtFrameDetail.grid(row=1,column=0)
+                
+
+if __name__ == '__main__':
+    main()
        
