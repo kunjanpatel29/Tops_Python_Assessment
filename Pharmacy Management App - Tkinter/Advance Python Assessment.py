@@ -255,4 +255,70 @@ class Window2:
         self.lblDate.grid(row=6,column=0,sticky=W)
         self.txtDate=Entry(MembersName_F,font=('arial',14,'bold'),bd=7,textvariable=DateofOrder, insertwidth=2)
         self.txtDate.grid(row=6,column=1)
+
+        #===============================Member Information==================================
+        self.lblProve_of_ID = Label(MembersName_F,font=('arial',14,'bold'),text="Prove of ID",bd=7)
+        self.lblProve_of_ID.grid(row=7,column=0,sticky=W)
+
+
+        self.cboProve_of_ID = ttk.Combobox(MembersName_F,textvariable=var1,state='readonly',font=('arial',14,'bold'),width=19)
+        self.cboProve_of_ID['value']=('','Pilot Licence','Driving Licence','Passport','Student ID')
+        self.cboProve_of_ID.current(0)
+        self.cboProve_of_ID.grid(row=7,column=1)
+
+        self.lblType_of_Member=Label(MembersName_F,font=('arial',14,'bold'), text="Type of Member",bd=7)
+        self.lblType_of_Member.grid(row=8,column=0,sticky=W)
+
+        self.cboType_of_Member= ttk.Combobox(MembersName_F, textvariable=var2, state='readonly',font=('arial',14,'bold'),width=19)
+        self.cboType_of_Member['value']=('','Full Member','Annual Membership','Pay As You Go','Honorary Member')
+        self.cboType_of_Member.current(0)
+        self.cboType_of_Member.grid(row=8,column=1)
+
+        self.lblMethod_of_Payment = Label(MembersName_F,font=('arial',14,'bold'), text="Method of Payment",bd=7)
+        self.lblMethod_of_Payment.grid(row=9,column=0,sticky=W)
+
+        self.cboMethod_of_Payment = ttk.Combobox(MembersName_F,textvariable=var3,state='readonly',font=('arial',14,'bold'),width=19)  
+
+        self.cboMethod_of_Payment['value']=('','Visa Card','Master Card','Debit Card','Cash')
+        self.cboMethod_of_Payment.current(0)
+        self.cboMethod_of_Payment.grid(row=9,column=1)
+
+        #======================================Check Button=============================
+        self.chkMembership = Checkbutton(MembersName_F,text='Patient Fees',variable=var4,onvalue=1,
+                                         offvalue=0,font=('arial',16,'bold'),command=Membership_Fees).grid(row=10,column=0,sticky=W)
+        self.txtMembership=Entry(MembersName_F,font=('arial',14,'bold'),textvariable=Membership,bd=7,
+                                 insertwidth=2,state=DISABLED, justify=RIGHT)
+
+        self.txtMembership.grid(row=10,column=1)
+
+        #======================================Receipt=============================
+        self.lblLabel = Label(Receipt_ButtonFrame,font=('arial',10,'bold'),pady=10,
+            text="Patient Ref\t Firstname\t Surname\t Address\t\t Date Reg.\t Telephone\t Patient Paid",bd=7)
+        self.lblLabel.grid(row=0,column=0, columnspan=4)
+
+        self.txtReceipt = Text(Receipt_ButtonFrame,width=112,height=22,font=('arial',10,'bold'))
+        self.txtReceipt.grid(row=1,column=0,columnspan=4)
+
+        #======================================Buttons===================================
+        self.btnReceipt=Button(Receipt_ButtonFrame,padx=18,bd=7,font=('arial',16,'bold'),width=13,text='Receipt',
+                               command=Receipt).grid(row=2,column=0)
+        self.btnReset=Button(Receipt_ButtonFrame,padx=18,bd=7,font=('arial',16,'bold'),width=13,text='Reset',
+                               command=Reset).grid(row=2,column=1)
+        self.btnExit=Button(Receipt_ButtonFrame,padx=18,bd=7,font=('arial',16,'bold'),width=13,text='Exit',
+                               command=iExit).grid(row=2,column=2)
+
+        #=========================================================================
+
+    def close_windows(self):
+        self.master.destroy()
+
+    def iExit(self):
+        self.iExit= tkinter.messagebox.askyesno("Patient Registration System","Confrim if you want to exit?")
+        if self.iExit > 0:
+            self.master.destroy()
+        else:
+            self.newWindow = Toplevel(self.master)
+            self.app = Window2(self.newWindow)
+            return
+
        
