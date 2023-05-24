@@ -437,7 +437,7 @@ class Window3:
             self.txtPrescription.delete("1.0",END)
             return
 
-        # ======================================= Frame =================================       
+        #===================================Frame ======================================      
         MainFrame=Frame(self.frame)
         MainFrame.grid()
 
@@ -463,4 +463,100 @@ class Window3:
         DataFrameRIGHT=LabelFrame(DataFrame,bd=10,width=800,height=300,padx=20,relief=RIDGE,
                                  font=('arial',12,'bold'),text="Prescription",)
         DataFrameRIGHT.pack(side=RIGHT)
+
+        #==================================DataFrameLEFT====================================
+        self.lblNameTablet = Label(DataFrameLEFT, font=('arial',12,'bold'),text="Name of Tablets:",
+                                   padx=2,pady=2)
+        self.lblNameTablet.grid(row=0,column=0,sticky=W)
+
+        self.cboNameTablet=ttk.Combobox(DataFrameLEFT,textvariable=cmbNameTablets,state='readonly',
+                                         font=('arial',12,'bold'),width=23)
+        self.cboNameTablet['value']=('','Co-codamol','Paracetamol','Amlodipine','DSR')
+        self.cboNameTablet.current(0)
+        self.cboNameTablet.grid(row=0,column=1)
+
+        self.lblFurtherInfo = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Further Information:",padx=2,pady=2)
+        self.lblFurtherInfo.grid(row=0,column=2,sticky=W)
+        self.txtFurtherInfo=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable=FurtherInformation,width=25)
+        self.txtFurtherInfo.grid(row=0,column=3)
+        
+        self.lblRef = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Reference No:",padx=2,pady=2)
+        self.lblRef.grid(row=1,column=0,sticky=W)
+        self.txtRef=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable=Ref,width=25)
+        self.txtRef.grid(row=1,column=1)
+
+        self.lblStorage = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Storage Advice:",padx=2,pady=2)
+        self.lblStorage.grid(row=1,column=2,sticky=W)
+        self.txtStorage=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable=StorageAdvice,width=25)
+        self.txtStorage.grid(row=1,column=3)
+
+        self.lblDose = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Dose:",padx=2,pady=2)
+        self.lblDose.grid(row=2,column=0,sticky=W)
+        self.txtDose=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable=Dose,width=25)
+        self.txtDose.grid(row=2,column=1)
+
+        self.lblDUseMachine = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Driving Machines:",padx=2,pady=2)
+        self.lblDUseMachine.grid(row=2,column=2,sticky=W)
+        self.txtDUseMachine=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable=DrivingUsingMachines,width=25)
+        self.txtDUseMachine.grid(row=2,column=3)
+
+        self.lblNoOfTablets = Label(DataFrameLEFT,font=('arial',12,'bold'),text="No. of Tablets:",padx=2,pady=2)
+        self.lblNoOfTablets.grid(row=3,column=0,sticky=W)
+        self.txtNoOfTablets=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= NumberofTablets,width=25)
+        self.txtNoOfTablets.grid(row=3,column=1)
+
+        self.lblUseMedication = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Medication:",padx=2,pady=2)
+        self.lblUseMedication.grid(row=3,column=2,sticky=W)
+        self.txtUseMedication=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= HowtoUseMedication,width=25)
+        self.txtUseMedication.grid(row=3,column=3)
+
+        self.lblLot = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Lot:",padx=2,pady=2)
+        self.lblLot.grid(row=4,column=0,sticky=W)
+        self.txtLot=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= Lot,width=25)
+        self.txtLot.grid(row=4,column=1)
+
+        self.lblPatientID = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Patient ID:",padx=2,pady=2)
+        self.lblPatientID.grid(row=4,column=2,sticky=W)
+        self.txtPatientID=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= PatientID,width=25)
+        self.txtPatientID.grid(row=4,column=3)
+
+        self.lblIssuedDate = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Issued Date:",padx=2,pady=2)
+        self.lblIssuedDate.grid(row=5,column=0,sticky=W)
+        self.txtIssuedDate=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= IssuedDate,width=25)
+        self.txtIssuedDate.grid(row=5,column=1)
+
+        self.lblNHSNumber = Label(DataFrameLEFT,font=('arial',12,'bold'),text="NHS Number:",padx=2,pady=2)
+        self.lblNHSNumber.grid(row=5,column=2,sticky=W)
+        self.txtNHSNumber=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= NHSNumber,width=25)
+        self.txtNHSNumber.grid(row=5,column=3)
+
+        self.lblExpDate = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Exp Date:",padx=2,pady=2)
+        self.lblExpDate.grid(row=6,column=0,sticky=W)
+        self.txtExpDate=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= ExpDate,width=25)
+        self.txtExpDate.grid(row=6,column=1)
+
+        self.lblPatientName = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Patient Name:",padx=2,pady=2)
+        self.lblPatientName.grid(row=6,column=2,sticky=W)
+        self.txtPatientName=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= PatientName,width=25)
+        self.txtPatientName.grid(row=6,column=3)
+
+        self.lblDailyDose = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Daily Dose:",padx=2,pady=2)
+        self.lblDailyDose.grid(row=7,column=0,sticky=W)
+        self.txtDailyDose=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= DailyDose,width=25)
+        self.txtDailyDose.grid(row=7,column=1)
+
+        self.lblDateofBirth = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Date of Birth:",padx=2,pady=2)
+        self.lblDateofBirth.grid(row=7,column=2,sticky=W)
+        self.txtDateofBirth=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= DateofBirth,width=25)
+        self.txtDateofBirth.grid(row=7,column=3)
+
+        self.lblSideEffects = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Side Effects:",padx=2,pady=2)
+        self.lblSideEffects.grid(row=8,column=0,sticky=W)
+        self.txtSideEffects=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= PossibleSideEffects,width=25)
+        self.txtSideEffects.grid(row=8,column=1)
+
+        self.lblPatientAddress = Label(DataFrameLEFT,font=('arial',12,'bold'),text="Patient Address:",padx=2,pady=2)
+        self.lblPatientAddress.grid(row=8,column=2,sticky=W)
+        self.txtPatientAddress=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= PatientAddress,width=25)
+        self.txtPatientAddress.grid(row=8,column=3)
        
