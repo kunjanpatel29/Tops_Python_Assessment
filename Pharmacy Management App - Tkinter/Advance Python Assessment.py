@@ -68,4 +68,43 @@ class Window1:
                                   state=DISABLED,command=self.Hospital_window,font=('arial',20,'bold'))
         self.btnHospital.grid(row = 0, column = 1)
         #===============================================================================
-    
+
+    def Login_System(self):
+        user = (self.Username.get())
+        pas= (self.Password.get())
+
+        if (user == str(1234)) and (pas == str(2345)):
+            self.btnRegistration.config(state = NORMAL)
+            self.btnHospital.config(state = NORMAL)
+        else:
+            tkinter.messagebox.askyesno("Pharmacy Management System", "You have entered an invalid login details")
+            self.btnRegistration.config(state = DISABLED)
+            self.btnHospital.config(state = DISABLED)
+            self.Username.set("")
+            self.Password.set("")
+            self.txtUsername.focus()
+
+    def Reset(self):
+        self.btnRegistration.config(state = DISABLED)
+        self.btnHospital.config(state = DISABLED)
+        self.Username.set("")
+        self.Password.set("")
+        self.txtUsername.focus()
+
+    def iExit(self):
+        self.iExit = tkinter.messagebox.askyesno("Pharmacy Management System", "Cofirm if you want to exit")
+        if self.iExit > 0:
+            self.master.destroy()
+            return
+            
+        
+        #===============================================================================
+
+    def Registration_window(self):
+        self.newWindow = Toplevel(self.master)
+        self.app = Window2(self.newWindow)
+
+    def Hospital_window(self):
+        self.newWindow = Toplevel(self.master)
+        self.app = Window3(self.newWindow)
+        
