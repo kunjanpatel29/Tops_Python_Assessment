@@ -321,4 +321,70 @@ class Window2:
             self.app = Window2(self.newWindow)
             return
 
+
+class Window3:
+    def __init__(self,master):
+        self.master = master
+        self.master.title("Hospital Management System")
+        self.master.geometry('1350x750+0+0')
+        self.frame = Frame(self.master)
+        self.frame.pack()
+
+        #===========================================Frame=================================
+
+        cmbNameTablets=StringVar()
+        Ref=StringVar()
+        Dose=StringVar()
+        NumberofTablets=StringVar()
+        Lot=StringVar()
+        IssuedDate=StringVar()
+        ExpDate=StringVar()
+        DailyDose=StringVar()
+        PossibleSideEffects=StringVar()
+        FurtherInformation=StringVar()
+        StorageAdvice=StringVar()
+        DrivingUsingMachines=StringVar()
+        HowtoUseMedication=StringVar()
+        PatientID=StringVar()
+        NHSNumber=StringVar()
+        PatientName=StringVar()
+        DateofBirth=StringVar()
+        PatientAddress=StringVar()
+        Prescription=StringVar()
+
+        #===================================== Function Declaration========================
+
+        def iExit():
+            iExit = tkinter.messagebox.askyesno("Hospital Management System", "Confirm if You Want to Exit?")
+            if iExit > 0:
+                self.master.destroy()
+                return
+
+        def iPrescription():
+            self.txtPrescription.insert(END,'Name of Tablets: \t\t\t\t' + cmbNameTablets.get() + "\n")
+            self.txtPrescription.insert(END,'Reference No: \t\t\t\t' + Ref.get() + "\n")
+            self.txtPrescription.insert(END,'Dose: \t\t\t\t' + Dose.get() + "\n")
+            self.txtPrescription.insert(END,'Number of Tablets: \t\t\t\t' + NumberofTablets.get() + "\n")
+            self.txtPrescription.insert(END,'Lot: \t\t\t\t' + Lot.get() + "\n")
+            self.txtPrescription.insert(END,'Issued Date: \t\t\t\t' + IssuedDate.get() + "\n")
+            self.txtPrescription.insert(END,'Exp. Date: \t\t\t\t' + ExpDate.get() + "\n")
+            self.txtPrescription.insert(END,'Daily Dose: \t\t\t\t' + DailyDose.get() + "\n")
+            self.txtPrescription.insert(END,'Possible Side Effects: \t\t\t\t' + PossibleSideEffects.get() + "\n")
+            self.txtPrescription.insert(END,'Further Information: \t\t\t\t' + FurtherInformation.get() + "\n")
+            self.txtPrescription.insert(END,'Storage Advice: \t\t\t\t' + StorageAdvice.get() + "\n")
+            self.txtPrescription.insert(END,'Drivng or Using Machines: \t\t\t\t' + DrivingUsingMachines.get() + "\n")
+            self.txtPrescription.insert(END,'How to Use Medication: \t\t\t\t' + HowtoUseMedication.get() + "\n")
+            self.txtPrescription.insert(END,'Patient ID: \t\t\t\t' + PatientID.get() + "\n")
+            self.txtPrescription.insert(END,'NHS Number: \t\t\t\t' + NHSNumber.get() + "\n")
+            self.txtPrescription.insert(END,'Patient Name: \t\t\t\t' + PatientName.get() + "\n")
+            self.txtPrescription.insert(END,'Date of Birth: \t\t\t\t' + DateofBirth.get() + "\n")
+            self.txtPrescription.insert(END,'PatientAddress: \t\t\t\t' + PatientAddress.get() + "\n")
+            return
+
+        def iPrescriptionData():
+            self.txtFrameDetail.insert(END, cmbNameTablets.get()+ "\t\t"+Ref.get()+"\t"+Dose.get()+"\t\t"+
+            NumberofTablets.get()+ "\t"+Lot.get()+"\t"+IssuedDate.get()+"\t\t"+ExpDate.get()+"\t"+
+            DailyDose.get() + "\t\t"+StorageAdvice.get()+ "\t"+ NHSNumber.get()+ "\t\t"+PatientName.get()
+            +"\t"+DateofBirth.get()+"\t"+PatientAddress.get()+ "\n")
+            return
        
