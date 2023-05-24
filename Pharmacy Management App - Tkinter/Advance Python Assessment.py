@@ -194,5 +194,65 @@ class Window2:
             elif(var4.get() == 0):
                 self.txtMembership.configure(state=DISABLED)
                 Membership.set("0")
-                
+        #==================================== Frame =======================================        
+        Mainframe=Frame(self.frame)
+        Mainframe.grid()
+
+        TitleFrame=Frame(Mainframe,bd=20, width=1200, padx=35,relief=RIDGE)
+        TitleFrame.pack(side=TOP)
+
+        self.lblTitle=Label(TitleFrame,font=('arial',40,'bold'),text="Patient Registration System",padx=4)
+        self.lblTitle.grid()
+
+        #==================================== LowerFrames ======================================= 
+        MemberDetailsFrame = LabelFrame(Mainframe,width=1350,height=500,bd=20,pady=5,relief=RIDGE)
+
+        MemberDetailsFrame.pack(side=BOTTOM)
+
+        FrameDetails = LabelFrame(MemberDetailsFrame,bd=10,width=800,height=400,relief=RIDGE)
+        FrameDetails.pack(side=LEFT)
+
+        MembersName_F = LabelFrame(FrameDetails, bd=10,width=350,height=400,
+                                   font=('arial',12,'bold'),text= "Customer Name",relief=RIDGE)
+        MembersName_F.grid(row=0,column=0)
+
+        Receipt_ButtonFrame = LabelFrame(MemberDetailsFrame,bd=10,width=1000,height=400,relief=RIDGE)
+        Receipt_ButtonFrame.pack(side=RIGHT)
+
+        #==================================================================================
+        self.lblReferenceNo=Label(MembersName_F,font=('arial',14,'bold'),text="Reference No",bd=7)
+        self.lblReferenceNo.grid(row=0,column=0,sticky=W)
+        self.txtReferenceNo=Entry(MembersName_F,font=('arial',14,'bold'),bd=7,textvariable=Ref,
+                                  state=DISABLED,insertwidth=2)
+        self.txtReferenceNo.grid(row=0,column=1)
+
+        self.lblFirstname=Label(MembersName_F,font=('arial',14,'bold'),text="Firstname",bd=7)
+        self.lblFirstname.grid(row=1,column=0,sticky=W)
+        self.txtFirstname=Entry(MembersName_F,font=('arial',14,'bold'),bd=7,textvariable=Firstname, insertwidth=2)
+        self.txtFirstname.grid(row=1,column=1)
+
+        self.lblSurname=Label(MembersName_F,font=('arial',14,'bold'),text="Surname",bd=7)
+        self.lblSurname.grid(row=2,column=0,sticky=W)
+        self.txtSurname=Entry(MembersName_F,font=('arial',14,'bold'),bd=7,textvariable=Surname, insertwidth=2)
+        self.txtSurname.grid(row=2,column=1)
+
+        self.lblAddress=Label(MembersName_F,font=('arial',14,'bold'),text="Address",bd=7)
+        self.lblAddress.grid(row=3,column=0,sticky=W)
+        self.txtAddress=Entry(MembersName_F,font=('arial',14,'bold'),bd=7,textvariable=Address, insertwidth=2)
+        self.txtAddress.grid(row=3,column=1)
+
+        self.lblPostCode=Label(MembersName_F,font=('arial',14,'bold'),text="PostCode",bd=7)
+        self.lblPostCode.grid(row=4,column=0,sticky=W)
+        self.txtPostCode=Entry(MembersName_F,font=('arial',14,'bold'),bd=7,textvariable=PostCode, insertwidth=2)
+        self.txtPostCode.grid(row=4,column=1)
+
+        self.lblTelephone=Label(MembersName_F,font=('arial',14,'bold'),text="Telephone",bd=7)
+        self.lblTelephone.grid(row=5,column=0,sticky=W)
+        self.txtTelephone=Entry(MembersName_F,font=('arial',14,'bold'),bd=7,textvariable=Telephone, insertwidth=2)
+        self.txtTelephone.grid(row=5,column=1)
+
+        self.lblDate=Label(MembersName_F,font=('arial',14,'bold'),text="Date",bd=7)
+        self.lblDate.grid(row=6,column=0,sticky=W)
+        self.txtDate=Entry(MembersName_F,font=('arial',14,'bold'),bd=7,textvariable=DateofOrder, insertwidth=2)
+        self.txtDate.grid(row=6,column=1)
        
