@@ -559,4 +559,31 @@ class Window3:
         self.lblPatientAddress.grid(row=8,column=2,sticky=W)
         self.txtPatientAddress=Entry(DataFrameLEFT,font=('arial',12,'bold'),textvariable= PatientAddress,width=25)
         self.txtPatientAddress.grid(row=8,column=3)
+
+        #================================DataFrameRight====================================
+
+        self.txtPrescription=Text(DataFrameRIGHT,font=('arial',12,'bold'),width=43,height=12,padx=2,pady=6)
+        self.txtPrescription.grid(row=0,column=0)
+
+        #================================ButtonFrame=======================================
+
+        self.btnPrescription=Button(ButtonFrame,text='Prescription',font=('arial',12,'bold'),width=24,bd=4,
+                                    command=iPrescription)
+        self.btnPrescription.grid(row=0,column=0)
+        
+        self.btnPrescriptionData=Button(ButtonFrame,text='Prescription Data',font=('arial',12,'bold'),
+                                        width=24,bd=4,command=iPrescriptionData)
+        self.btnPrescriptionData.grid(row=0,column=1)
+        
+        self.btnDelete=Button(ButtonFrame,text='Delete',font=('arial',12,'bold'),width=24,bd=4,
+                              command=iDelete)
+        self.btnDelete.grid(row=0,column=2)
+        
+        self.btnReset=Button(ButtonFrame,text='Reset',font=('arial',12,'bold'),width=24,bd=4,
+                             command=iReset)
+        self.btnReset.grid(row=0,column=3)
+
+        self.btnExit=Button(ButtonFrame,text='Exit',font=('arial',12,'bold'),width=24,bd=4,
+                            command=iExit)
+        self.btnExit.grid(row=0,column=4)
        
